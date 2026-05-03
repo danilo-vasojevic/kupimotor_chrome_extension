@@ -642,3 +642,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
   return false;
 });
+
+// Handle extension icon click
+chrome.action.onClicked.addListener((tab) => {
+  if (tab.url && (tab.url.includes('kupimotor.rs') || tab.url.includes('www.kupimotor.rs'))) {
+    chrome.tabs.sendMessage(tab.id, { action: 'togglePanel' }, (response) => {
+      if (chrome.runtime.lastError) {
+        console.log('Content script not ready:', chrome.runtime.lastError);
+      }
+    });
+  }
+});

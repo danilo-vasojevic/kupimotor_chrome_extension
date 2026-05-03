@@ -15,8 +15,8 @@
     "https://www.bikez.com/*"
   ],
   "action": {
-    "default_popup": "popup.html",
-    "default_title": "KupiMotor Auto-Fill"
+    "default_title": "KupiMotor Auto-Fill",
+    "default_icon": "icon.svg"
   },
   "background": {
     "service_worker": "background.js"
