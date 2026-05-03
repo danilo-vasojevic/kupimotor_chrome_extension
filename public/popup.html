@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KupiMotor Auto-Fill</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🏍️ KupiMotor Auto-Fill</h1>
+    
+    <form id="searchForm">
+      <div class="form-group">
+        <label for="brand">Motorcycle Brand *</label>
+        <input 
+          type="text" 
+          id="brand" 
+          placeholder="e.g., Honda, Yamaha, Kawasaki" 
+          autocomplete="off"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="model">Model *</label>
+        <input 
+          type="text" 
+          id="model" 
+          placeholder="e.g., CB500F, MT-09" 
+          autocomplete="off"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="year">Year (optional)</label>
+        <input 
+          type="number" 
+          id="year" 
+          placeholder="2024" 
+          min="1950" 
+          max="2027"
+        >
+      </div>
+
+      <button type="submit" class="btn-search">Search</button>
+    </form>
+
+    <div id="status" class="status hidden"></div>
+
+    <div id="results" class="results hidden">
+      <h3>Search Results</h3>
+      <div id="resultsList" class="results-list"></div>
+    </div>
+
+    <div id="loading" class="loading hidden">
+      <p>Searching...</p>
+    </div>
+
+    <div id="error" class="error hidden"></div>
+
+    <div class="footer">
+      <p class="credit">Data sourced from DDPC Vehicle Specs Database (CC BY 4.0)</p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

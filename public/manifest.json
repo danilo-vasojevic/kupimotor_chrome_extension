@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "KupiMotor Auto-Fill",
+  "version": "1.0.0",
+  "description": "Auto-fill motorcycle specifications on kupimotor.rs from free motorcycle API data",
+  "permissions": [
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://kupimotor.rs/*",
+    "https://www.kupimotor.rs/*",
+    "http://kupimotor.rs/*",
+    "http://www.kupimotor.rs/*",
+    "https://bikez.com/*",
+    "https://www.bikez.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "KupiMotor Auto-Fill"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://kupimotor.rs/*",
+        "https://www.kupimotor.rs/*",
+        "http://kupimotor.rs/*",
+        "http://www.kupimotor.rs/*"
+      ],
+      "js": ["content.js"],
+      "all_frames": false
+    }
+  ]
+}
